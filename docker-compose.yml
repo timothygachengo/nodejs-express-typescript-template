@@ -1,0 +1,22 @@
+services:
+  mysql:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_DATABASE: "example"
+      MYSQL_USER: "root"
+      MYSQL_PASSWORD: ""
+    volumes:
+      - "example:/var/lib/mysql"
+    depends_on:
+      - db
+    restart: unless-stopped
+    command: mysqld_safe --skip-grant-tables
+    healthcheck:
+      test: ["CMD", "mysqladmin", "-u", "root", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      
