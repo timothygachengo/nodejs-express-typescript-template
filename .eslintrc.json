@@ -1,0 +1,76 @@
+{
+    "env": {
+        "es2021": true,
+        "node": true
+    },
+    "extends": [
+        "standard",
+        "airbnb-base",
+        "airbnb-typescript/base"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 13,
+        "sourceType": "module",
+        "project": [
+            "tsconfig.json"
+        ]
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "max-len": [
+            "error",
+            {
+                "code": 240
+            }
+        ],
+        "no-console": "off",
+        "semi": [
+            "error",
+            "always"
+        ],
+        "quotes": [
+            "error",
+            "single",
+            {
+                "avoidEscape": true,
+                "allowTemplateLiterals": true
+            }
+        ],
+        "radix": "off",
+        "import/extensions": "off",
+        "lines-between-class-members": "off",
+        "@typescript-eslint/lines-between-class-members": [
+            "error",
+            "always",
+            {
+                "exceptAfterSingleLine": true
+            }
+        ],
+        "comma-dangle": "off",
+        "@typescript-eslint/comma-dangle": [
+            "error",
+            "never"
+        ],
+        "no-underscore-dangle": "off",
+        "@typescript-eslint/no-underscor-dangle": "off",
+        "import/prefer-default-export": "off",
+        "class-methods-use-this" : "off",
+        "@typescript-eslint/naming-convention" : [
+            "error", 
+            {"selector" : "variableLike", "format" : ["camelCase", "PascalCase", "snake_case", "UPPER_CASE"]}
+        ],
+        "newline-per-chained-call" : [
+            "error",
+            { "ignoreChainWithDepth" : 3 }
+        ],
+        "@typescript-eslint/space-before-blocks" : "off",
+        "import/no-dependency-cycles" : "off",
+        "@typescript-eslint/indent" : [
+            "error",
+            4
+        ]
+    }
+}
